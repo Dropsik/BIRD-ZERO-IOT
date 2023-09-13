@@ -152,18 +152,17 @@ void loop()
    if(RemoteXY.switch_1 == 1){
     if(millis() > start_time + INTERVAL){
         start_time = millis();
-        Serial2.write(messageStart, sizeof(messageStart));
         switch (RemoteXY.select_1) {
           case 0:
           Serial2.write(messageStart, sizeof(messageStart));
           sprintf (RemoteXY.text_1, "27km/h");
           break;
           case 1:
-          Serial2.write(messageLimit, sizeof(messageStart));
+          Serial2.write(messageLimit, sizeof(messageLimit));
           sprintf (RemoteXY.text_1, "20km/h");
           break;
           case 2:
-          Serial2.write(messageWalk, sizeof(messageStart));
+          Serial2.write(messageWalk, sizeof(messageWalk));
           sprintf (RemoteXY.text_1, "4km/h");
           break;
         }
